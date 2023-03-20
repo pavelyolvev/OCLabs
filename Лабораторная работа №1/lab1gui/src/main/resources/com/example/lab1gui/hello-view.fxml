@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="BASELINE_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="239.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab1gui.HelloController">
+   <children>
+      <MenuBar>
+        <menus>
+            <Menu mnemonicParsing="false" text="Priority">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Thread 1">
+                     <graphic>
+                        <Slider blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="10" showTickLabels="true" snapToTicks="true" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Thread 2">
+                     <graphic>
+                        <Slider blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="10" showTickLabels="true" snapToTicks="true" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Thread 3">
+                     <graphic>
+                        <Slider blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="10" showTickLabels="true" snapToTicks="true" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Apply changes" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox fx:id="thread1slider" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="173.0" prefWidth="507.0" spacing="10.0">
+               <children>
+                  <ProgressBar fx:id="tank1ProgBar" prefHeight="35.0" prefWidth="490.0" progress="0.0" />
+                  <ProgressBar fx:id="tank2ProgBar" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="490.0" progress="0.0" />
+                  <ProgressBar fx:id="tank3ProgBar" layoutX="10.0" layoutY="45.0" prefHeight="35.0" prefWidth="490.0" progress="0.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="173.0" prefWidth="298.0" spacing="25.0">
+               <children>
+                  <Label text="Tank 1" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Tank 2" />
+                  <Label layoutX="10.0" layoutY="27.0" text="Tank 3" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" fillWidth="false" layoutX="517.0" layoutY="10.0" prefHeight="173.0" prefWidth="298.0" spacing="25.0">
+               <children>
+                  <Label fx:id="tank1volume" text="volume" />
+                  <Label fx:id="tank2volume" layoutX="10.0" layoutY="10.0" text="volume" />
+                  <Label fx:id="tank3volume" layoutX="10.0" layoutY="27.0" text="volume" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#FillButton" text="  Fill  " />
+            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#DrainButton" text="Drain" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
